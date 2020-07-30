@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/list']">GitHub interview app</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="userName">
+        <a class="nav-link" [routerLink]="['/profile', userName]">{{userName}}</a>
+      </li>
+      <li class="nav-item" *ngIf="userName">
+        <a class="nav-link" href="#" (click)="logout()">Logout</a>
+      </li>
+      <li class="nav-item" *ngIf="!userName">
+        <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=Iv1.92c22d1ed6ecfe1b">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>

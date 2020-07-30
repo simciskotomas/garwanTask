@@ -1,0 +1,47 @@
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.search {
+  margin: 20px 0px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+
+  .btn-group {
+    margin-right: 10px;
+  }
+}
+
+a{
+  .user {
+    margin-bottom: 20px;
+    color: #000;
+
+    .img {
+      text-align:center;
+      height: 150px;
+
+      img {
+        height: 100%;
+      }
+    }
+    .details {
+      border-left:3px solid #ded4da;
+    }
+    .details p{
+      font-size:15px;
+      font-weight:bold;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

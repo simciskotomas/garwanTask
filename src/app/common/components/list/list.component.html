@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row justify-content-center search">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <div class="col">
+            <input class="form-control form-control-lg form-control-borderless" [(ngModel)]="city"
+                   [ngModelOptions]="{standalone: true}" placeholder="City">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-lg btn-success" type="submit" (click)="loadUsers()">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row justify-content-center buttons">
+    <div class="col-10 col-md-6 col-lg-6">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Sort group">
+        <button type="button" class="btn btn-outline-primary" (click)="changeSort('repositories')">Repositories</button>
+        <button type="button" class="btn btn-outline-primary" (click)="changeSort('followers')">Followers</button>
+        <button type="button" class="btn btn-outline-primary" (click)="changeSort('joined')">Created date</button>
+      </div>
+      <div class="btn-group btn-group-sm" role="group" aria-label="Order group">
+        <button type="button" class="btn btn-outline-info" (click)="changeOrder('desc')">Desc</button>
+        <button type="button" class="btn btn-outline-info" (click)="changeOrder('asc')">Asc</button>
+      </div>
+    </div>
+  </div>
+
+  <a [routerLink]="['/profile', user.login]" *ngFor="let user of detailedUsers">
+    <div class="row justify-content-center user">
+      <div class="col-md-3 img">
+        <img src="{{user.avatar_url}}" alt="" class="img-rounded">
+      </div>
+      <div class="col-6 col-md-3 details">
+        <blockquote>
+          <h5>{{user.name}}</h5>
+          <div><small><cite title="Source Title">Public repositories
+            : </cite><strong>{{user.public_repos}}</strong></small></div>
+          <div><small><cite title="Source Title">Followers : </cite><strong>{{user.followers}}</strong></small></div>
+        </blockquote>
+      </div>
+    </div>
+  </a>
+</div>
